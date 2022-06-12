@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF=8">
+		<title>Say Hello</title> 
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+	</head>
+
+	<body>
+		<img src = "https://us.123rf.com/450wm/kotokomi/kotokomi1511/kotokomi151100169/48604336-hello-world-modern-calligraphy-text-handwritten-with-brush-and-black-ink-isolated-on-white-backgroun.jpg?ver=6">
+		<br>
+		<form action="greet" method="POST">
+			{% for message in get_flashed_messages()%}
+				<p> {{message}} </p>
+			{% endfor %}
+
+			
+			<br>
+			<input type="text" name="name_input">
+			<br>
+			<input type="submit" value="GREET" id="greet">
+		</form>
+
+	</body>
+
+</html>
